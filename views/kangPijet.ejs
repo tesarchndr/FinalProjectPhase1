@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pijat Ena</title>
+    <style>
+        thead tr th {
+            background-color: rgba(128, 128, 128, 0.089);
+        }
+        tbody tr th{
+            border-bottom: 1px solid rgba(143, 141, 141, 0.372) ;
+        }
+    </style>
+</head>
+<body>
+    <br>    
+    <div>
+        <div>
+            <table style="width: 40%;">
+                <thead>
+                    <tr>
+                        <th>Detail</th>
+                        <th> </th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <% data.forEach(el => { %>
+                    <tbody>
+                        <tr>
+                            <th>
+                                <p>Name: <span style="font-weight: 20;" ><%= el.name %></span>  </p>
+                                <p>Gender: <span style="font-weight: 20;" ><%= el.gender %></span>  </p>
+                                <p>Category: <span style="font-weight: 20;" ><%= el.category %></span>  </p>
+                                <p>Location: <span style="font-weight: 20;" ><%= el.location %></span>  </p>
+                                <p>Price: <span style="font-weight: 20;" > <%= el.price%></span>  </p>
+                            </th>
+                            <th><img src="<%= el.img %> " alt="" width="150" height="180" style="border-radius: 10px;"> </th>
+                            <th>
+                                <a href="/kang-pijet/<%= el.id %> "><button>Order</button></a>
+                            </th>
+                        </tr>
+                    </tbody>
+                <% }); %> 
+            </table>
+        </div>
+    </div>
+</body>
+</html>

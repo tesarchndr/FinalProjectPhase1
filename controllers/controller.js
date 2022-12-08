@@ -1,6 +1,7 @@
 const { masseus, Profile, User } = require('../models')
 const { Op } = require('sequelize')
 
+
 class Controller {
     static home(req, response) {
         const username = req.session.username
