@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 3100
- const router = require('./router/index')
+const router = require('./router/index')
 const session = require('express-session')
 const Controller = require('./controllers/controller_login')
 
@@ -18,12 +18,16 @@ app.use(session({
     sameSite:true
   }
 }))
+
 app.use('/', router)
 app.get('/register', Controller.get_register)
 app.post('/register', Controller.post_register)
 
 app.get('/login', Controller.get_login)
 app.post('/login', Controller.post_login)
+
+app.get('/logout', Controller.get_logout)
+
 
 
 app.listen(port, () => {
