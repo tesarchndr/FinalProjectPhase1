@@ -1,4 +1,4 @@
-const {masseus} = require('../models')
+const { masseus } = require('../models')
 const {Op} = require('sequelize')
 const {formatRupiah} = require('../helpers/index')
 
@@ -15,7 +15,7 @@ class Controller {
     }
     static kangPijetId(req, response){
         const {id} = req.params
-        masseus.findByPK(id)
+        masseus.findOne({where: {id} })
         .then(data => {
             response.render('kangPijetId', {data})
         })

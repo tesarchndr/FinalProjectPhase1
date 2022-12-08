@@ -29,10 +29,14 @@ class Controller {
         .then((usr) => {
             if (bcrypt.compareSync(password, usr.password)) { 
                 req.session.username = username
+                req.session.isAdmin = usr.isAdmin
                 res.redirect('/') 
             } 
             else { res.redirect(`/login?errors=${`Invalid password`}`) }
-        }).catch((err) => { res.redirect(`/login?errors=${`Username not found`}`) })
+        }).catch((err) => { 
+            // res.send(err)
+            res.redirect(`/login?errors=${`Username not found`}`) 
+        })
     }
 
     static get_logout(req, res){

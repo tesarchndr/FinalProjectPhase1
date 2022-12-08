@@ -18,6 +18,11 @@
                                 <a class="nav-link"><%= name.toUpperCase() %></a>
                             </li>
                         <% } %>
+                        <% if (admin) { %>
+                            <li class="nav-item px-3">
+                                <a class="nav-link" href="/admin">EDIT MASSEUS</a>
+                            </li>
+                        <% } %>
                         <li class="nav-item px-3">
                             <% if (name) { %>
                                 <a class="nav-link" href="/logout">LOG OUT</a>
