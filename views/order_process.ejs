@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link type="text/css" rel="stylesheet" href="../../swiper-bundle.min.css">
+    <link type="text/css" rel="stylesheet" href="../../style1.css">
+    <link type="text/css" rel="stylesheet" href="../../style2.css">
+</head>
+
+<body onload="
+
+let timerInterval
+            Swal.fire({
+            title: 'Kang Pijet siap-siap',
+            timer: 1000,
+            didOpen: () => { Swal.showLoading() },
+            willClose: () => { clearInterval(timerInterval) }
+            })
+            .then((result) => {
+            
+                Swal.fire({
+                title: 'Lagi dijalan nih',
+                timer: 1000,
+                didOpen: () => { Swal.showLoading() },
+                willClose: () => { clearInterval(timerInterval) }
+                })
+                .then((result) => {
+                    Swal.fire({
+                    title: 'Macet Euy',
+                    timer: 1000,
+                    didOpen: () => { Swal.showLoading() },
+                    willClose: () => { clearInterval(timerInterval) }
+                    })
+                    .then((result) => {
+                        Swal.fire({
+                        title: 'Udah didepan nih Ka, \nbukain pintunya dong',
+                        timer: 1000,
+                        didOpen: () => { Swal.showLoading() },
+                        willClose: () => { clearInterval(timerInterval) }
+                        })
+                        .then((result) => {
+                            Swal.fire({
+                            title: 'Sudah selesai pijetnya nih ka',
+                            timer: 1000,
+                            didOpen: () => { Swal.showLoading() },
+                            willClose: () => { clearInterval(timerInterval) }
+                            })
+                            .then((result) => {
+                                Swal.fire({
+                                title: 'Pijat selesai, \nTerima kasih sudah menggunakan Pijet Ena',
+                                timer: 1000,
+                                didOpen: () => { Swal.showLoading() },
+                                willClose: () => { clearInterval(timerInterval) }
+                                })
+                                .then((result) => {
+                                    
+                                    Swal.fire({
+                                        title: 'Pijat selesai, \nTerima kasih sudah menggunakan Pijet Ena',
+                                        text: 'Silakan untuk menulisakan review',
+                                        confirmButtonColor: '##ffddd2'
+                                    })
+                                    .then(okay => {
+                                        if (okay) {
+                                            window.location.href = '/'
+                                        }
+                                    })
+                                })
+                            })
+                        })
+                    })
+                })
+            })
+
+">
+    <!-- NAVBAR -->
+    <%- include('./partials/navbar.ejs')%>
+        <br><br><br><br><br>
+        <!-- NAVBAR END -->
+    <div>
+        <h1>Input Order</h1>
+        <form action="/kang-pijet/:id/order" method="post">
+            Choose Date <input type="datetime-local" name="orderDate"> <br>
+            Input Duration <input type="duration" name="duration"> <br>
+            <input type="button" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

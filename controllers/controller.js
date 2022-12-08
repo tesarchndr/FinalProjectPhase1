@@ -1,4 +1,4 @@
-const { masseus, Profile, User } = require('../models')
+const { Masseus, Profile, User } = require('../models')
 const { Op } = require('sequelize')
 
 
@@ -25,7 +25,7 @@ class Controller {
     }
 
     static admin(req, response) {
-        const { username, isAdmin } = req.session
+        const { username, isAdmin, name } = req.session
         const { search } = req.query
         if (req.session.isAdmin) {
             let option = {
@@ -36,7 +36,7 @@ class Controller {
                     [Op.iLike]: `%${search}%`
                 }
             }
-            masseus.findAll(option)
+            Masseus.findAll(option)
                 .then(data => {
                     response.render('admin', { data, name, isAdmin })
                 })
@@ -45,25 +45,45 @@ class Controller {
         }
     }
 
+
     static addMasseusGet(req, response) {
-        response.render('addMasseus')
+        const { username, isAdmin, name } = req.session
+        const errors = req.query.errors
+        if (errors) {
+            response.render('addMasseus', { name, isAdmin, err: JSON.parse(errors)})
+        } else {
+            response.render('addMasseus', { name, isAdmin , err: {}})
+        }
+
+        console.log(errors);
     }
+
     static addMasseusPost(req, response) {
         const { name, gender, category, location, rating, price, img } = req.body
-        masseus.create({ name, gender, category, location, rating, price, img })
+        Masseus.create({ name, gender, category, location, rating, price, img })
             .then(() => {
                 response.redirect('/admin')
             })
             .catch(err => {
-                response.send(err)
+                if (err.name === "SequelizeValidationError") {
+                    let errors = {}
+                    err.errors.forEach(el => {
+                        errors[el.path] = el.message
+                    })
+                    response.redirect(`/admin/add?errors=${JSON.stringify(errors)}`)
+                } else {
+                    response.send(err)
+                }
             })
     }
+
     static editMasseusGet(req, response) {
+        const { username, isAdmin, name } = req.session
         const id = req.params.id
-        masseus.findByPk(id)
+        Masseus.findByPk(id)
             .then(data => {
                 console.log(data);
-                response.render('editMasseus', { data })
+                response.render('editMasseus', { data, name, isAdmin })
             })
             .catch(err => {
                 response.send(err)
@@ -73,7 +93,7 @@ class Controller {
         const id = req.params.id
         const { name, gender, category, location, rating, price, img } = req.body
         console.log(req.body, id);
-        masseus.update({ name, gender, category, location, rating, price, img }, { where: { id } })
+        Masseus.update({ name, gender, category, location, rating, price, img }, { where: { id } })
             .then(() => {
                 response.redirect('/admin')
             })
@@ -83,7 +103,7 @@ class Controller {
     }
     static deleteMasseus(req, response) {
         const id = req.params.id
-        masseus.destroy({ where: { id } })
+        Masseus.destroy({ where: { id } })
             .then(() => {
                 response.redirect('/admin')
             })

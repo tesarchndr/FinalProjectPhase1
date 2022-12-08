@@ -11,11 +11,11 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Testimony.belongsTo(models.masseus)
+      Testimony.belongsTo(models.Masseus)
     }
   }
   Testimony.init({
-    MasseusId: DataTypes.INTEGER,
+    MasseuId: DataTypes.INTEGER,
     message: DataTypes.STRING,
     likeStatus: DataTypes.BOOLEAN
   }, {

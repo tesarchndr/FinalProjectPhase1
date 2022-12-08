@@ -5,9 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Masseus</title>
+        <!-- CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link type="text/css" rel="stylesheet" href="../swiper-bundle.min.css">
+        <link type="text/css" rel="stylesheet" href="../style1.css">
+        <link type="text/css" rel="stylesheet" href="../style2.css">
+        <style>
+            .errors{
+                color: rgb(219, 0, 0);
+            }
+        </style>
 </head>
 <body>
-    
+    <!-- NAVBAR -->
+    <%- include('./partials/navbar.ejs')%>
+    <br><br><br><br><br>
+    <!-- NAVBAR END -->
+
     <div>
         <h1>Add Masseus</h1>
     </div>
@@ -15,7 +30,8 @@
         <form action="/admin/add" method="post">
             <div>
                 <label for="name">Name:</label><br>
-                <input type="text" name="name" id="" placeholder="name..">
+                <input type="text" name="name" id="" placeholder="name.."><br>
+                <label for="" class="errors"> <%= !err.name?'':err.name %>.</label>
             </div>
             <div>
                 <label for="gender">Gender:</label><br>
@@ -23,41 +39,47 @@
                     <option value="" disabled selected>Choose One</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
-                </select>
+                </select><br>
+                <label for="" class="errors"><%= !err.gender?'':err.gender %>.</label>
             </div>
             <div>
                 <label for="name">Category:</label><br>
                 <select name="category" id="">
                     <option value="" disabled selected>Choose One</option>
-                    <option value="prenatal">Prenatal</option>
-                    <option value="jaringan dalam">Jaringan Dalam</option>
-                    <option value="aromaterapi">Aromaterapi</option>
-                    <option value="refleksi">Refleksi</option>
-                    <option value="olahraga">Olahraga</option>
-                </select>
+                    <option value="Prenatal">Prenatal</option>
+                    <option value="Jaringan dalam">Jaringan Dalam</option>
+                    <option value="Aromaterapi">Aromaterapi</option>
+                    <option value="Refleksi">Refleksi</option>
+                    <option value="Olahraga">Olahraga</option>
+                </select><br>
+                <label for="" class="errors"><%= !err.category?'':err.category %>.</label>
             </div>
             <div>
                 <label for="location">Location</label><br>
                 <select name="location" id="">
                     <option value="" disabled selected>Select Location</option>
-                    <option value="jakarta timur">Jakarta Timur</option>
-                    <option value="jakarta pusat">Jakarta Pusat</option>
-                    <option value="jakarta utara">Jakarta Utara</option>
-                    <option value="jakarta selatan">Jakarta Selata</option>
-                    <option value="jakarta barat">Jakarta Barat</option>
-                </select>
+                    <option value="Jakarta Timur">Jakarta Timur</option>
+                    <option value="Jakarta Pusat">Jakarta Pusat</option>
+                    <option value="Jakarta Utara">Jakarta Utara</option>
+                    <option value="Jakarta Selatan">Jakarta Selata</option>
+                    <option value="Jakarta Barat">Jakarta Barat</option>
+                </select><br>
+                <label for="" class="errors"> <%= !err.location?'':err.location %>.</label>
             </div>
             <div>
                 <label for="rating">Rating</label><br>
-                <input type="number" name="rating" placeholder="0-5">
+                <input type="number" name="rating" placeholder="0-5"><br>
+                <label for="" class="errors"><%= !err.rating?'':err.rating %>.</label>
             </div>
             <div>
                 <label for="price">Price</label><br>
-                <input type="number" name="price">
+                <input type="number" name="price"><br>
+                <label for="" class="errors"><%= !err.price?'':err.price %>.</label>
             </div>
             <div>
                 <label for="img">Image Link</label><br>
-                <input type="text" name="img">
+                <input type="text" name="img"><br>
+                <label for="" class="errors"><%= !err.img?'':err.img %>.</label>
             </div>
             <input type="submit" value="Add">
             <button><a href="/admin">Cancel</a></button>

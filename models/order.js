@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Order.belongsTo(models.User)
+      Order.hasMany(models.Masseus)
     }
   }
   Order.init({
@@ -24,5 +25,8 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Order',
   });
+  Order.beforeCreate((instance, option)=>{
+    instance.status = 'ordered'
+  })
   return Order;
 };

@@ -7,9 +7,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        table {
-            width: 70%;
+        thead tr th {
+            background-color: rgba(128, 128, 128, 0.089);
         }
+        tbody tr th{
+            border-bottom: 1px solid rgba(143, 141, 141, 0.372) ;
+        }
+
+        .content-table {
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9 em;
+            min-width: 600px;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .content-table thead tr {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: center;
+            font-weight: bold;
+        }
+        .content-table th,
+        .content-table td {
+            padding: 12px 15px;
+        }
+
+        .content-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+
     </style>
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -21,55 +48,89 @@
 <body>
     <!-- NAVBAR -->
     <%- include('./partials/navbar.ejs')%>
+    <br><br><br><br><br>
     <!-- NAVBAR END -->
-    <nav style="background-color: #f7ded6c6;">
-        <div style="display: flex; align-items: center;">
-        <img src="./img/logo3.png" alt="" class="nav-logo" width="60">
-        <a href="" style="font-size: 25px; font-weight:600; text-decoration: none; color: black;">Pijet Ena</a>
+    <div style="display: flex; margin:auto; align-items: center; justify-content: center; flex-direction:column">
+        <div>
+            <div><h1>Admin Home</h1></div>
         </div>
-    </nav>
-    <div>
-        <div><h1>Admin Home</h1></div>
-    </div>
-    <div>
-        <a href="/admin/add"><button>Add new Masseus</button></a>
-    </div>
-    <div>
-        <form action="/admin" method="get">
-            <input type="text" name="search" id="">
-            <input type="submit" value="search">
-        </form>
-    </div>
-    <div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Gender</th>
-                    <th>Category</th>
-                    <th>Location</th>
-                    <th>Price</th>
-                    <th>Image</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <% data.forEach(el => {%>
-                <tbody>
+        <div>
+            <a href="/admin/add"><button>Add new Masseus</button></a>
+        </div>
+        <br>
+        <div>
+            <form action="/admin" method="get">
+                <input type="text" name="search" id="" style="width: 500px;">
+                <input type="submit" value="search">
+            </form>
+        </div>
+        <div>
+            <table class="content-table">
+                <thead>
                     <tr>
-                        <td><%= el.name %> </td>
-                        <td><%= el.gender %> </td>
-                        <td><%= el.category %> </td>
-                        <td><%= el.location %> </td>
-                        <td><%= el.price %> </td>
-                        <td><img src="<%= el.img %>" alt="" width="100"></td>
-                        <td>
-                            <a href="/admin/<%= el.id%>/edit"><button>Edit</button></a>
-                            <a href="/admin/<%= el.id%>/delete"><button>delete</button></a>
-                        </td>
+                        <th>Name</th>
+                        <th>Gender</th>
+                        <th>Category</th>
+                        <th>Location</th>
+                        <th>Price</th>
+                        <th>Image</th>
+                        <th>Action</th>
                     </tr>
-                </tbody>
-            <% }); %> 
-        </table>
+                </thead>
+                <% data.forEach(el => {%>
+                    <tbody>
+                        <tr>
+                            <td><%= el.name %> </td>
+                            <td><%= el.gender %> </td>
+                            <td><%= el.category %> </td>
+                            <td><%= el.location %> </td>
+                            <td><%= el.formatPrice() %> </td>
+                            <td><img src="<%= el.img %>" alt="" width="100"></td>
+                            <td>
+                                <a href="/admin/<%= el.id%>/edit"><button>Edit</button></a>
+                                <a href="/admin/<%= el.id%>/delete"><button>delete</button></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                <% }); %> 
+            </table>
+        </div>
     </div>
+    <footer class="footer" id="testimoni">
+        <div class="footer-left">
+            <div style="margin: 40px 0 20px 0; display: flex; justify-content: left;">
+                <i class='bx bxl-whatsapp logo-footer'
+                    style="font-size: 30px; margin-left: 20px; border-radius: 50%;padding: 5px;""></i>
+            <i class='bx bxl-instagram logo-footer' style=" font-size: 30px; margin-left: 20px; border-radius:
+                    50%;padding: 5px;"></i>
+                <i class='bx bxl-facebook logo-footer'
+                    style="font-size: 30px; margin-left: 20px; border-radius: 50%;padding: 5px;""></i>
+            <i class='bx bxl-telegram logo-footer' style=" font-size: 30px; margin-left: 20px; border-radius:
+                    50%;padding: 5px;""></i>
+                <i class='bx bxl-twitter logo-footer'
+                    style="font-size: 30px; margin-left: 20px; border-radius: 50%;padding: 5px;""></i>
+        </div>
+        <div style=" display: flex; ">
+            <p class=" footer-p"
+                    style="padding: 0 27px 0 20px; border-right: 1.5px solid black; cursor: pointer;">Account</p>
+                    <p class="footer-p" style="padding: 0 27px; border-right: 1.5px solid black; cursor: pointer;">
+                        Subscription FAQ</p>
+                    <p class="footer-p" style="padding: 0 27px; border-right: 1.5px solid black; cursor: pointer;">
+                        Policies</p>
+                    <p class="footer-p" style="padding: 0 27px; cursor: pointer;">Shipping Policy</p>
+            </div>
+            <div>
+                <p style="text-align: left; padding-left: 20px; font-size: 12px;">© 2022 Pijet Ena-Ena Company. All
+                    rights reserved.</p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <div class="footer-download">
+                <h5 style="padding-right: 20px; font-size: 17px;">Download App di</h5>
+                <img style="margin: 5px;cursor: pointer; width: 100px;" src="ic-applestore.svg" alt="">
+                <img style="margin: 5px; cursor: pointer; width: 100px" src="ic-playstore.svg" alt="">
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

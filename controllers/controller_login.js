@@ -19,7 +19,7 @@ class Controller {
     }
 
     static get_login(req, res) {
-        res.render('login')
+        res.render('login', { name:null, isAdmin:null})
     }
 
     static post_login(req, res) {
@@ -30,6 +30,7 @@ class Controller {
             if (bcrypt.compareSync(password, usr.password)) { 
                 req.session.username = username
                 req.session.isAdmin = usr.isAdmin
+                req.session.user_id = usr.id
                 res.redirect('/') 
             } 
             else { res.redirect(`/login?errors=${`Invalid password`}`) }

@@ -1,14 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet" />
+
+    <!-- Link Swiper's CSS -->
+    <link type="text/css" rel="stylesheet" href="/swiper-bundle.min.css">
+
+    <!-- CSS -->
+    <link type="text/css" rel="stylesheet" href="/style1.css">
+
+    <!-- BOXICONS CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link type="text/css" rel="stylesheet" href="/style2.css">
+    <link rel=”icon” href=”/img/logo3.png”>
+    <title>Pijet Ena-Ena</title>
+    <style>
+    </style>
+<!-- CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link type="text/css" rel="stylesheet" href="../../../swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../../../style1.css">
+<link type="text/css" rel="stylesheet" href="../../../style2.css">
 </head>
 <body>
-    <div>
+<!-- NAVBAR -->
+<%- include('./partials/navbar.ejs')%>
+<br><br><br><br><br>
+<!-- NAVBAR END -->
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: 100px;">
+
+        <div>
+            <h1>
+                <%= data.name %>
+            </h1>
+        </div>
+        <div style="display: flex;">
+            <div style="margin: 20px;"><img src="<%= data.img %>" alt="" width="200" height="230"
+                    style="border-radius: 10px;"></div>
+            <div>
+                <p><b>Category:</b>
+                    <%= data.category %>
+                </p>
+                <p><b>Gender:</b>
+                    <%= data.gender %>
+                </p>
+                <p><b>Location:</b>
+                    <%= data.location %>
+                </p>
+                <p><b>Price:</b>
+                    <%= data.price %>
+                </p>
+                <p><b>Rating:</b>
+                    <%= data.rating %>
+                </p>
+                <a href="/kang-pijet/<%= data.id %>/order"><button>Pesan</button></a>
+                <a href="/kang-pijet/<%= data.id %>/testimoni"><button>Add Testimoni</button></a>
+            </div>
+        </div>
+        <div style="margin-top: 100px;">
+            <div>
+                <h2>Testimoni!!</h2>
+            </div>
+            <br>
+            <div class="text" style="display: flex;">
+                <% data.Testimonies.forEach(el=> { %>
+                    <!-- <div style="width: 200px; height: 100px; background-color: aqua; align-items: center; justify-content: center; display: flex;">
+                    <p>“Enak banget!! setelah dipijet badan jadi rileks. Gak salah pilih deh pesen pijet di Pijet Ena”</p>
+                </div> -->
+                    <div class="slide swiper-slide" style="width: 500px; border: 1px solid grey; border-radius: 10px;margin-left: 20px; height: 150px;">
+                        <i class='bx bxs-quote-alt-left quote-icon'></i>
+                        <p style="width: 500px; font-size: 20px;">“<%= el.message %> ”</p>
+
+                        <i class='bx bxs-quote-alt-left quote-icon'></i>
+
+                        <!-- <div class="details">
+                        <span class="name">Ani Geraldin</span>
+                        <span class="job">Selebritis</span>
+                    </div> -->
+                    </div>
+                    <%}); %>
+            </div>
+            <div>
+
+            </div>
+        </div>
         
+
     </div>
+    <footer class="footer" id="testimoni">
+        <div class="footer-left">
+            <div style="margin: 40px 0 20px 0; display: flex; justify-content: left;">
+                <i class='bx bxl-whatsapp logo-footer'
+                    style="font-size: 30px; margin-left: 20px; border-radius: 50%;padding: 5px;""></i>
+            <i class='bx bxl-instagram logo-footer' style=" font-size: 30px; margin-left: 20px; border-radius:
+                    50%;padding: 5px;"></i>
+                <i class='bx bxl-facebook logo-footer'
+                    style="font-size: 30px; margin-left: 20px; border-radius: 50%;padding: 5px;""></i>
+            <i class='bx bxl-telegram logo-footer' style=" font-size: 30px; margin-left: 20px; border-radius:
+                    50%;padding: 5px;""></i>
+                <i class='bx bxl-twitter logo-footer'
+                    style="font-size: 30px; margin-left: 20px; border-radius: 50%;padding: 5px;""></i>
+        </div>
+        <div style=" display: flex; ">
+            <p class=" footer-p"
+                    style="padding: 0 27px 0 20px; border-right: 1.5px solid black; cursor: pointer;">Account</p>
+                    <p class="footer-p" style="padding: 0 27px; border-right: 1.5px solid black; cursor: pointer;">
+                        Subscription FAQ</p>
+                    <p class="footer-p" style="padding: 0 27px; border-right: 1.5px solid black; cursor: pointer;">
+                        Policies</p>
+                    <p class="footer-p" style="padding: 0 27px; cursor: pointer;">Shipping Policy</p>
+            </div>
+            <div>
+                <p style="text-align: left; padding-left: 20px; font-size: 12px;">© 2022 Pijet Ena-Ena Company. All
+                    rights reserved.</p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <div class="footer-download">
+                <h5 style="padding-right: 20px; font-size: 17px;">Download App di</h5>
+                <img style="margin: 5px;cursor: pointer; width: 100px;" src="" alt="">
+                <img style="margin: 5px; cursor: pointer; width: 100px" src="" alt="">
+            </div>
+        </div>
+        <!-- <div class="footer-container">
+        <div class="footer-address">
+            <img src="" alt="">
+            <h5>Ena-Ena</h5>
+        </div>
+        <div class="footer-call">
+            <h5>Help</h5>
+            <br>
+            <p>Account</p>
+            <p>Subscription FAQ</p>
+            <p>Policies</p>
+            <p>Shipping Policy</p>
+        </div>
+
+        <div class="footer-download">
+            <h5>Download App di</h5>
+            <img style="margin: 15px;cursor: pointer;" src="ic-applestore.svg" alt="">
+            <img style="margin: 15px; cursor: pointer;" src="ic-playstore.svg" alt="">
+        </div>
+        <div class="footer-call" style="width: 200px;">
+            <h5>Contact Us</h5>
+            <i class='bx bxl-whatsapp logo-footer' style="font-size: 30px;"></i>
+            <i class='bx bxl-instagram' style="font-size: 30px;"></i>
+            <i class='bx bxl-facebook' style="font-size: 30px;"></i>
+            <i class='bx bxl-telegram' style="font-size: 30px;"></i>
+            <i class='bx bxl-twitter' style="font-size: 30px;"></i>
+        </div>
+    </div> -->
+    </footer>
+
+    <!-- 
+    <script src="./js/swiper-bundle.min.js"></script>
+
+    <!-- JS -->
+    <script src="./js/1.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
