@@ -4,8 +4,7 @@ const { Op } = require('sequelize')
 
 class Controller {
     static home(req, response) {
-        const username = req.session.username
-        const admin = req.session.isAdmin
+        const { username, isAdmin, name } = req.session
         const option = {}
         if (username) {
             option.where = { username }
@@ -14,11 +13,11 @@ class Controller {
         User.findAll(option)
             .then((data) => {
                 if (!username) {
-                    response.render('home', { name:null, admin:null})
+                    response.render('home', { name:null, isAdmin:null})
                 } else {
                     const name = data[0].name
-                    console.log(name)
-                    response.render('home', { name, admin })
+                    req.session.name = name
+                    response.render('home', { name, isAdmin })
                 }
             }).catch((err) => {
                 response.send(err)
@@ -26,6 +25,7 @@ class Controller {
     }
 
     static admin(req, response) {
+        const { username, isAdmin } = req.session
         const { search } = req.query
         if (req.session.isAdmin) {
             let option = {
@@ -38,7 +38,7 @@ class Controller {
             }
             masseus.findAll(option)
                 .then(data => {
-                    response.render('admin', { data })
+                    response.render('admin', { data, name, isAdmin })
                 })
         } else {
             response.redirect('/login')
