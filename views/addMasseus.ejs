@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Masseus</title>
+</head>
+<body>
+    <div>
+        <h1>Add Masseus</h1>
+    </div>
+    <div>
+        <form action="/admin/add" method="post">
+            <div>
+                <label for="name">Name:</label><br>
+                <input type="text" name="name" id="" placeholder="name..">
+            </div>
+            <div>
+                <label for="gender">Gender:</label><br>
+                <select name="gender" id="">
+                    <option value="" disabled selected>Choose One</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <div>
+                <label for="name">Category:</label><br>
+                <select name="category" id="">
+                    <option value="" disabled selected>Choose One</option>
+                    <option value="prenatal">Prenatal</option>
+                    <option value="jaringan dalam">Jaringan Dalam</option>
+                    <option value="aromaterapi">Aromaterapi</option>
+                    <option value="refleksi">Refleksi</option>
+                    <option value="olahraga">Olahraga</option>
+                </select>
+            </div>
+            <div>
+                <label for="location">Location</label><br>
+                <select name="location" id="">
+                    <option value="" disabled selected>Select Location</option>
+                    <option value="jakarta timur">Jakarta Timur</option>
+                    <option value="jakarta pusat">Jakarta Pusat</option>
+                    <option value="jakarta utara">Jakarta Utara</option>
+                    <option value="jakarta selatan">Jakarta Selata</option>
+                    <option value="jakarta barat">Jakarta Barat</option>
+                </select>
+            </div>
+            <div>
+                <label for="rating">Rating</label><br>
+                <input type="number" name="rating" placeholder="0-5">
+            </div>
+            <div>
+                <label for="price">Price</label><br>
+                <input type="number" name="price">
+            </div>
+            <div>
+                <label for="img">Image Link</label><br>
+                <input type="text" name="img">
+            </div>
+            <input type="submit" value="Add">
+            <button><a href="/admin">Cancel</a></button>
+        </form>
+    </div>
+</body>
+</html>

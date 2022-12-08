@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 70%;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div><h1>Admin Home</h1></div>
+    </div>
+    <div>
+        <a href="/admin/add"><button>Add new Masseus</button></a>
+    </div>
+    <div>
+        <form action="/admin" method="get">
+            <input type="text" name="search" id="">
+            <input type="submit" value="search">
+        </form>
+    </div>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Category</th>
+                    <th>Location</th>
+                    <th>Price</th>
+                    <th>Image</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <% data.forEach(el => {%>
+                <tbody>
+                    <tr>
+                        <td><%= el.name %> </td>
+                        <td><%= el.gender %> </td>
+                        <td><%= el.category %> </td>
+                        <td><%= el.location %> </td>
+                        <td><%= el.price %> </td>
+                        <td><img src="<%= el.img %>" alt="" width="100"></td>
+                        <td>
+                            <a href="/admin/<%= el.id%>/edit"><button>Edit</button></a>
+                            <a href="/admin/<%= el.id%>/delete"><button>delete</button></a>
+                        </td>
+                    </tr>
+                </tbody>
+            <% }); %> 
+        </table>
+    </div>
+</body>
+</html>
