@@ -1,4 +1,4 @@
-const {masseus, Profile, User} = require('../models')
+const {masseus} = require('../models')
 const {Op} = require('sequelize')
 
 class Controller{
