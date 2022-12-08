@@ -1,0 +1,360 @@
+*{
+    margin: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.nav {
+    z-index: 10;
+    background-color: white;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 10px 28px -15px rgba(0,0,0,0.75);
+-webkit-box-shadow: 0px 10px 28px -15px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 10px 28px -15px rgba(0,0,0,0.75);
+padding:5px 0px;
+
+}
+
+.nav-logo{
+    width: 60px;
+    margin-right: 15px;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+    padding: 0px 8px;
+    /* background-color: aqua; */
+}
+
+.nav-left a {
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.nav-right a {
+    padding: 10px;
+    font-size:  15px;
+    font-weight: 500;
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid white;
+
+}
+
+.nav-right a:hover {
+    transition: .2s;
+    border-bottom: 1px solid black;
+    color: rgb(98, 46, 46);
+}
+
+
+/* carousel */
+.carousel {
+    position: relative;
+}
+
+/* about us */
+.about-us-container {
+    display: flex;
+    background-color: #ffddd2;
+
+}
+
+.about-us-box {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    left: 50px;
+    top: 135px;
+    /* background-color: bisque; */
+}
+.about-us-box h1, .about-us-box p {
+    padding: 20px;
+
+}
+
+.about-us-box p {
+    font-size: medium;
+}
+
+
+.aii {
+    background-color: rgba(0, 0, 0, 0.117);
+    border-radius: 50px;
+    height: 50px;
+}
+
+.ai {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    row-gap: 1px;
+    background-color: rgba(0, 0, 0, 0.223);
+    border-radius: 100px;
+    height: 100px;
+    transition: .3s;
+}
+
+.ai h5 {
+    font-size: 1px;
+}
+
+.ai:hover {
+    background-color: rgba(0, 0, 0, 0.422);
+    border-radius: 100px;
+    height: 100px;
+}
+
+
+/* service */
+.service {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-box {
+    text-align: center;
+}
+
+.service-title {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.service-img  {
+    margin: 10px 20px 5px 20px;
+    width: 200px;
+    height: 120px;
+    border-radius: 50px;
+    transition: .3s cubic-bezier(.13,.65,.85,.35)
+}
+
+/* .service-img:hover {
+    scale: 105%;
+} */
+
+/* kang pijet */
+.kang-pijet {
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 100%;
+    height: 500px;
+    background-color: brown;
+}
+
+.kang-pijet-intro {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    color: aliceblue;
+    width: 800px;
+    height: 100%;
+    background-color: rgb(122, 61, 61);
+    padding: 0px 30px;
+}
+
+.kang-pijet-intro h2{
+    width: 280px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.kang-pijet-intro p {
+    width: 280px;
+    text-align: left;
+}
+
+.kang-pijet-box {
+    display: flex;
+    align-items: center;
+    padding: 25px px;
+    list-style: none;
+    overflow-x: scroll ;
+    scroll-snap-type: x mandatory;
+}
+
+.kang-pijet-card {
+    display: flex;
+    margin: 30px 30px 100px 30px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex: 0 0 20%;
+    padding: 65px 25px;
+    background: white;
+    border-radius: 12px;
+    border: 2px solid rgba(0, 0, 0, 0.379);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.467);
+    scroll-snap-align: start;
+    transition: all 0.2s;
+}
+
+.kang-pijet-card:hover {
+    scale: 105%;
+}
+/* kang pijet end */
+
+/* testimoni */
+
+.testimoni-container {
+    margin: 50px 0px;
+    width: 100%;
+    height: 400px;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimoni-container-left {
+    display: flex;
+    width: 70%;
+}
+
+.testimoni-container-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 100%;
+    background-color: azure;
+}
+
+.testimoni-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 30px 10px 30px;
+    width: 350px;
+    height: 200px;
+    background-color: rgb(42, 39, 54);
+    /* border-radius: 10px; */
+    color: white;
+    /* position: relative; */
+}
+
+.testimoni-box p, .testimoni-box img {
+    margin-top: 10px;
+    font-size: small;
+
+}
+.testimoni-box img {
+    margin-top: 30px;
+}
+
+
+
+
+
+
+
+
+/* testimoni end */
+
+
+
+/* footer */
+
+footer{
+    margin-top: 50px;
+    background-color: #ffddd2;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: center;
+}
+
+.footer-download {
+    margin: 50px 25px;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.logo-footer {
+    transition: 0.5;
+    cursor: pointer;
+}
+
+.logo-footer:hover {
+    background-color: rgba(0, 0, 0, 0.047);
+}
+
+.footer-p:hover {
+    text-decoration: underline  ;
+}
+
+
+/* footer end */
+
+
+/* pesan */
+
+.order{
+    position: fixed;
+    border: 0px;
+    font-size: 18px;
+    font-weight: 600;
+    bottom: 20px;
+    right: 20px;
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: red;
+    box-shadow: 0 5px 15px rgba(242, 97, 103, .4);
+    transition: .3s;
+}
+.order a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.order:hover {
+    background-color: rgba(255, 0, 0, 0.429)
+}
+
+
+/* pesan end */
+
+
+
+
+
+
+
+
+
+
+
+
+

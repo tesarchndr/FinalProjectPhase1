@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1 class="h1logo">
+          <img src="./img/logo3.png" alt="" class="nav-logo-p">
+          <a href="index.html" style="font-size: 25px; font-weight:600">Pijet Ena</a>
+        </h1>
+        <ul>
+          <li id="btn-lihat-pesanan" style="cursor: pointer;">Pesanan</li>
+          <li>Profil</li>
+        </ul>
+      </div>
+
+      <div class="sidebar">
+        <!-- <h3>Filter</h3> -->
+        <form class="massage-category">
+          <h4 class="filter-label">Kategori Pijat</h4>
+          <input
+            type="checkbox"
+            id="aromaterapi"
+            name="aromaterapi"
+            value="Aromaterapi"
+          />
+          <label for="aromaterapi">Aromaterapi</label><br />
+          <input
+            type="checkbox"
+            id="jaringan-dalam"
+            name="jaringan-dalam"
+            value="Jaringan Dalam"
+          />
+          <label for="jaringan-dalam">Jaringan Dalam</label><br />
+          <input
+            type="checkbox"
+            id="prenatal"
+            name="prenatal"
+            value="Prenatal"
+          />
+          <label for="prenatal">Prenatal</label><br />
+          <input
+            type="checkbox"
+            id="Refleksi"
+            name="Refleksi"
+            value="Refleksi"
+          />
+          <label for="Refleksi">Refleksi</label><br />
+          <input
+            type="checkbox"
+            id="olahraga"
+            name="olahraga"
+            value="Olahraga"
+          />
+          <label for="olahraga">Olahraga</label><br />
+          <!-- <input type="submit" value="Submit" /> -->
+        </form>
+        <form class="location">
+          <h4 class="filter-label">Lokasi</h4>
+          <input
+            type="checkbox"
+            id="Jakarta-Pusat"
+            name="Jakarta-Pusat"
+            value="Jakarta Pusat"
+          />
+          <label for="Jakarta-Pusat">Jakarta Pusat</label><br />
+          <input
+            type="checkbox"
+            id="Jakarta-Selatan"
+            name="Jakarta-Selatan"
+            value="Jakarta Selatan"
+          />
+          <label for="Jakarta-Selatan">Jakarta Selatan</label><br />
+          <input
+            type="checkbox"
+            id="Jakarta-Barat"
+            name="Jakarta-Barat"
+            value="Jakarta Barat"
+          />
+          <label for="Jakarta-Barat">Jakarta Barat</label><br />
+          <input
+            type="checkbox"
+            id="Jakarta-Timur"
+            name="Jakarta-Timur"
+            value="Jakarta Timur"
+          />
+          <label for="Jakarta-Timur">Jakarta Timur</label><br />
+          <input
+            type="checkbox"
+            id="Jakarta-Utara"
+            name="Jakarta-Utara"
+            value="Jakarta Utara"
+          />
+          <label for="Jakarta-Utara">Jakarta Utara</label><br />
+        </form>
+
+        <div class="gender">
+          <h4 class="filter-label">Gender Terapis</h4>
+          <!-- <form>
+            <input type="radio" id="pria" name="gender" value="pria" />
+            <label for="html">Pria</label><br />
+            <input type="radio" id="wanita" name="gender" value="wanita" />
+            <label for="javascript">Wanita</label>
+          </form> -->
+          <form class="gender-form">
+            <input type="checkbox" id="Pria" name="Pria" value="Pria" />
+            <label for="Pria">Pria</label><br />
+            <input type="checkbox" id="wanita" name="wanita" value="Wanita" />
+            <label for="wanita"> Wanita</label><br />
+          </form>
+        </div>
+
+        <div class="price">
+          <h4 class="filter-label">Harga</h4>
+          <input
+            type="number"
+            placeholder="Harga Minimum"
+            class="price-input"
+            style="margin-bottom: 0.4rem"
+            id="price-min"
+          />
+          <br />
+          <input
+            type="number"
+            placeholder="Harga Maksimum"
+            class="price-input"
+            id="price-max"
+          />
+        </div>
+
+        <!-- <button class="btn-filter">Tes</button> -->
+
+        <!-- <div class="btn-filter">
+          <button class="btn-filter">Filter</button>
+        </div> -->
+      </div>
+
+      <div class="main">
+        <!--***TEMPLATE CARDS***-->
+        <div class="cards">
+          <img src="./img/2.webp" alt="" />
+          <div class="card-description">
+            <p class="card-name" id="card-name">
+              <span class="gender-icon">♂</span>Tesar Chandra
+            </p>
+            <p class="card-rating">⭐️ 4.9</p>
+            <p class="card-category">💆🏻 Pijat Prenatal</p>
+            <p class="card-price">💵 Rp500rb/jam</p>
+            <p class="card-location">📍 J. Selatan</p>
+            <button class="btn-order-now" id="000">Pesan</button>
+          </div>
+        </div>
+        <!-- <div class="cards">2</div>
+        <div class="cards">3</div>
+        <div class="cards">4</div>
+        <div class="cards">5</div>
+        <div class="cards">6</div>
+        <div class="cards">6</div>
+        <div class="cards">6</div>
+        <div class="cards">6</div>
+        <div class="cards">6</div>
+        <div class="cards">6</div>
+        <div class="cards">6</div>
+        <div class="cards">6</div>
+        <div class="cards">6</div>
+        <div class="cards">6</div>
+        <div class="cards">6</div>
+        <div class="cards">6</div> -->
+      </div>
+    </div>
+    <div class="modal hidden">
+      <button class="close-modal">&times;</button>
+      <div class="modal-container">
+        <h1 class="modal-title">Detail Pesanan</h1>
+        <img class="modal-image" src="./img/3.jpeg" alt="" />
+        <div class="modal-info-terapis">
+          <h2 class="modal-nama-terapis">
+            <span class="gender-icon">♂</span>Tesar Chandra
+          </h2>
+          <p class="modal-detail-terapis">⭐️ 4.9</p>
+          <p class="modal-detail-terapis">💆🏻 Pijat Prenatal</p>
+          <p class="modal-detail-terapis">💵 Rp500rb/jam</p>
+          <p class="modal-detail-terapis">📍 Jakarta Selatan</p>
+        </div>
+        <div class="modal-input-text">
+          <form>
+            <input type="text" id="nama" name="nama" placeholder="Nama Kamu" />
+          </form>
+          <form>
+            <input type="text" id="alamat" name="alamat" placeholder="Alamat" />
+          </form>
+        </div>
+        <div class="modal-input-date-time">
+          <form class="modal-input-date">
+            <select id="tanggal" name="tanggal">
+              <option value="11 November">11 November</option>
+              <option value="12 November">12 November</option>
+              <option value="13 November">13 November</option>
+              <option value="14 November">14 November</option>
+            </select>
+          </form>
+          <input
+            type="time"
+            id="appt"
+            name="appt"
+            min="09:00"
+            max="18:00"
+            required
+          />
+          <form class="modal-duration">
+            <select id="durasi" name="durasi">
+              <option value="1 Jam">1 Jam</option>
+              <option value="2 Jam">2 Jam</option>
+              <option value="3 Jam">3 Jam</option>
+            </select>
+          </form>
+        </div>
+        <button class="modal-btn-pesan-terapi" id="xxx">
+          Pesan Terapis Sekarang
+        </button>
+      </div>
+    </div>
+    <div class="overlay hidden"></div>
+
+    <div class="pesanan hidden">
+      <button class="close-pesanan">&times;</button>
+      <h1>Pesanan Kamu</h1>
+      <div class="pesanan-container">
+        <div class="pesanan-card">
+          <div class="hapus-pesanan"><img src="./img/hapus.png" alt="" /></div>
+          <div class="pesanan-image-container">
+            <img class="pesanan-image" src="./img/1.jpg" alt="" />
+          </div>
+          <div class="pesanan-terapis-detail">
+            <h3>Terapis Mantap</h3>
+            <p class="pesanan-detail-terapis">
+              💆🏻 Pijat Prenatal · Rp500rb/jam
+            </p>
+            <p class="pesanan-detail-terapis">🗓️ 11 November · 12.00 · 1 Jam</p>
+            <p class="pesanan-detail-terapis">📍 Jl. Tanah Kusir 2 no. 7</p>
+            <p class="pesanan-detail-terapis" id="total-pesanan">
+              💰 Total 1.5jt
+            </p>
+          </div>
+        </div>
+        <div class="pesanan-card">B</div>
+      </div>
+    </div>
+    <div class="pesanan-overlay hidden"></div>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

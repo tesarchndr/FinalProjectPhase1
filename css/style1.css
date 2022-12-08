@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* * {
+} */
+
+.container {
+    margin-top: 100px;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    height: 350px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.testimonial {
+    position: relative;
+    max-height: 500px;
+    height: 300px;
+    max-width: 900px;
+    /* height: 100%; */
+    width: 100%;
+    padding: 50px 0;
+    /* background-color: violet; */
+    overflow: hidden;
+}
+
+.testimonial .image{
+    height: 70px;
+    width: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: 0.7s;
+}
+
+.testimonial .image:hover {
+    scale: 140%;
+}
+
+.testimonial .slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 4px;
+}
+
+.slide p {
+    text-align: center;
+    font-size: 23px;
+    font-weight: 400;
+    color: #333;
+    padding: 0 120px;
+}
+
+.slide .quote-icon {
+    font-size: 20px;
+    color: blueviolet;
+}
+
+.slide .details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.details .name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+}
+.details .job {
+    font-size: 13px;
+    font-weight: 4 00;
+    color: #333;
+}
+
+/* swiper btn */
+
+.nav-btn {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    transform: translateY(10px);
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.nav-btn:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.nav-btn::after,
+.nav-btn::before {
+    font-size: 20px;
+    color: #fff;
+}
+
+.swiper-pagination-bullet {
+    background-color: rgba(34, 31, 31, 0.488);
+}
+.swiper-pagination-bullet-active {
+    background-color: rgba(112, 71, 236, 0.488);
+}
