@@ -1,0 +1,232 @@
+[
+    {
+        "id": "011",
+        "nama": "Bulay",
+        "gender": "Pria",
+        "kategori": "Aromaterapi",
+        "lokasi": "Jakarta Pusat",
+        "rating": 4.8,
+        "harga": 550,
+        "foto": "./img/011.jpg"
+    },
+    {
+        "id": "012",
+        "nama": "Dimas",
+        "gender": "Pria",
+        "kategori": "Jaringan Dalam",
+        "lokasi": "Jakarta Selatan",
+        "rating": 4.7,
+        "harga": 600,
+        "foto": "./img/012.jpg"
+    },
+    {
+        "id": "013",
+        "nama": "Ghozali",
+        "gender": "Pria",
+        "kategori": "Prenatal",
+        "lokasi": "Jakarta Barat",
+        "rating": 4.6,
+        "harga": 650,
+        "foto": "./img/013.jpg"
+    },
+    {
+        "id": "014",
+        "nama": "Downey",
+        "gender": "Pria",
+        "kategori": "Refleksi",
+        "lokasi": "Jakarta Timur",
+        "rating": 4.5,
+        "harga": 700,
+        "foto": "./img/014.jpg"
+    },
+    {
+        "id": "015",
+        "nama": "Fachry",
+        "gender": "Pria",
+        "kategori": "Olahraga",
+        "lokasi": "Jakarta Utara",
+        "rating": 4.4,
+        "harga": 750,
+        "foto": "./img/015.jpg"
+    },
+    {
+        "id": "016",
+        "nama": "Roni",
+        "gender": "Pria",
+        "kategori": "Olahraga",
+        "lokasi": "Jakarta Utara",
+        "rating": 4.3,
+        "harga": 725,
+        "foto": "./img/016.jpg"
+    },
+    {
+        "id": "017",
+        "nama": "Richan",
+        "gender": "Pria",
+        "kategori": "Refleksi",
+        "lokasi": "Jakarta Timur",
+        "rating": 4.2,
+        "harga": 675,
+        "foto": "./img/017.jpg"
+    },
+    {
+        "id": "018",
+        "nama": "Zahra",
+        "gender": "Wanita",
+        "kategori": "Jaringan Dalam",
+        "lokasi": "Jakarta Barat",
+        "rating": 4.1,
+        "harga": 625,
+        "foto": "./img/018.jpg"
+    },
+    {
+        "id": "019",
+        "nama": "Kaira",
+        "gender": "Wanita",
+        "kategori": "Prenatal",
+        "lokasi": "Jakarta Pusat",
+        "rating": 4.0,
+        "harga": 575,
+        "foto": "./img/019.jpg"
+    },
+    {
+        "id": "020",
+        "nama": "Cheri",
+        "gender": "Wanita",
+        "kategori": "Aromaterapi",
+        "lokasi": "Jakarta Selatan",
+        "rating": 5.0,
+        "harga": 800,
+        "foto": "./img/020.jpg"
+    },
+    {
+        "id": "021",
+        "nama": "Vita",
+        "gender": "Wanita",
+        "kategori": "Olahraga",
+        "lokasi": "Jakarta Utara",
+        "rating": 4.3,
+        "harga": 525,
+        "foto": "./img/021.jpg"
+    },
+    {
+        "id": "022",
+        "nama": "Yuga",
+        "gender": "Pria",
+        "kategori": "Prenatal",
+        "lokasi": "Jakarta Selatan",
+        "rating": 4.9,
+        "harga": 850,
+        "foto": "./img/22.jpeg"
+    },
+    {
+        "id": "023",
+        "nama": "Lina",
+        "gender": "Wanita",
+        "kategori": "Jaringan Dalam",
+        "lokasi": "Jakarta Utara",
+        "rating": 4.9,
+        "harga": 600,
+        "foto": "./img/23.jpeg"
+    },
+    {
+        "id": "024",
+        "nama": "Bintang",
+        "gender": "Pria",
+        "kategori": "Refleksi",
+        "lokasi": "Jakarta Barat",
+        "rating": 4.6,
+        "harga": 950,
+        "foto": "./img/24.jpeg"
+    },
+    {
+        "id": "025",
+        "nama": "Sam",
+        "gender": "Pria",
+        "kategori": "Olahraga",
+        "lokasi": "Jakarta Pusat",
+        "rating": 4.3,
+        "harga": 300,
+        "foto": "./img/25.jpeg"
+    },
+    {
+        "id": "026",
+        "nama": "Fahmi",
+        "gender": "Pria",
+        "kategori": "Jaringan Dalam",
+        "lokasi": "Jakarta Selatan",
+        "rating": 4.5,
+        "harga": 950,
+        "foto": "./img/26.jpeg"
+    },
+    {
+        "id": "027",
+        "nama": "Argoy",
+        "gender": "Pria",
+        "kategori": "Prenatal",
+        "lokasi": "Jakarta Timur",
+        "rating": 4.8,
+        "harga": 800,
+        "foto": "./img/27.jpeg"
+    },
+    {
+        "id": "028",
+        "nama": "Duwi",
+        "gender": "Wanita",
+        "kategori": "Aromaterapi",
+        "lokasi": "Jakarta Barat",
+        "rating": 4.7,
+        "harga": 300,
+        "foto": "./img/28.jpeg"
+    },
+    {
+        "id": "029",
+        "nama": "Paja",
+        "gender": "Pria",
+        "kategori": "Prenatal",
+        "lokasi": "Jakarta Selatan",
+        "rating": 1.0,
+        "harga": 1,
+        "foto": "./img/29.jpeg"
+    },
+    {
+        "id": "030",
+        "nama": "Dominique",
+        "gender": "Wanita",
+        "kategori": "Refleksi",
+        "lokasi": "Jakarta Barat",
+        "rating": 3.5,
+        "harga": 500,
+        "foto": "./img/30.jpeg"
+    },
+    {
+        "id": "031",
+        "nama": "Nabil",
+        "gender": "Pria",
+        "kategori": "Aromaterapi",
+        "lokasi": "Jakarta Selatan",
+        "rating": 4.2,
+        "harga": 700,
+        "foto": "./img/31.jpeg"
+    },
+    {
+        "id": "032",
+        "nama": "Yana",
+        "gender": "Pria",
+        "kategori": "Olahraga",
+        "lokasi": "Jakarta Timur",
+        "rating": 4.0,
+        "harga": 300,
+        "foto": "./img/32.jpeg"
+    },
+    {
+        "id": "001",
+        "nama": "Batu",
+        "gender": "Pria",
+        "kategori": "Prenatal",
+        "lokasi": "Jakarta Selatan",
+        "rating": 4.9,
+        "harga": 500,
+        "foto": "./img/001.jpg"
+    }
+]

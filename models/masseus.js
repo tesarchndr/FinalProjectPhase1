@@ -14,18 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   masseus.init({
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        notNull: {
-          msg : 'name is required'
-        },
-        notEmpty: {
-          msg : 'name is required'
-        }
-      }
-    },
+    name: DataTypes.STRING,
     gender: DataTypes.STRING,
     category: DataTypes.STRING,
     location: DataTypes.STRING,
