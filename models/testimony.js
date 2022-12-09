@@ -16,7 +16,18 @@ module.exports = (sequelize, DataTypes) => {
   }
   Testimony.init({
     MasseuId: DataTypes.INTEGER,
-    message: DataTypes.STRING,
+    message: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'message is required'
+        },
+        notEmpty: {
+          msg: 'message is required'
+        },
+      }
+    },
     likeStatus: DataTypes.BOOLEAN
   }, {
     sequelize,

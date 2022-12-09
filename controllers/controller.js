@@ -80,15 +80,22 @@ class Controller {
     static editMasseusGet(req, response) {
         const { username, isAdmin, name } = req.session
         const id = req.params.id
+        const {errors} = req.query
+        console.log(errors);
         Masseus.findByPk(id)
             .then(data => {
-                console.log(data);
-                response.render('editMasseus', { data, name, isAdmin })
+                if (errors) {
+                    response.render('editMasseus', { data, name, isAdmin, err: JSON.parse(errors)})
+                    
+                }else {
+                    response.render('editMasseus', { data,name , isAdmin , err: {}})
+                }
             })
             .catch(err => {
                 response.send(err)
             })
     }
+
     static editMasseusPost(req, response) {
         const id = req.params.id
         const { name, gender, category, location, rating, price, img } = req.body
@@ -98,7 +105,15 @@ class Controller {
                 response.redirect('/admin')
             })
             .catch(err => {
-                response.send(err)
+                if (err.name === "SequelizeValidationError") {
+                    let errors = {}
+                    err.errors.forEach(el => {
+                        errors[el.path] = el.message
+                    })
+                    response.redirect(`/admin/${id}/edit?errors=${JSON.stringify(errors)}`)
+                } else {
+                    response.send(err)
+                }
             })
     }
     static deleteMasseus(req, response) {

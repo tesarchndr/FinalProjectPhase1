@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .errors {
+            color: rgb(211, 9, 9);
+        }
+    </style>
 <!-- CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -18,15 +23,21 @@
 <br><br><br><br><br>
 <!-- NAVBAR END -->
     <div>
-        <div><h2>Tambah Testimoni Kang <%= data.name %> </h2></div>
+        <div><h2>Tambah Testimoni Kang <%= data.name %></h2></div>
         <div>
             <form action="/kang-pijet/<%= data.id %>/testimoni" method="post">
                 <label for="message">Message</label><br>
-                <textarea name="message" id="" cols="30" rows="10"></textarea><br>
-                
+                <textarea name="message" id="" cols="30" rows="10" placeholder="Write message here..."></textarea><br>
+                <label for="" class="errors"><%= !err.message?'':err.message %>.</label><br>
+                    Apakah kamu suka <%= data.name %> 
+                    <br>
+                    <input type="radio" name="likeStatus" value="true">Suka!
+                    <input type="radio" name="likeStatus" value="false">Tidak!
+                    <br><br>
                 <input type="submit" value="Add Testimoni">
             </form>
         </div>
     </div>
+    <%- include('./partials/footer.ejs')%>
 </body>
 </html>

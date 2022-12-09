@@ -11,7 +11,7 @@ app.use(express.static('./css'))
 app.use(express.static('./css/'))
 app.use(session({
   secret: 'delta',
-  resave: false,
+  resave: true,
   saveUninitialized: false,
   cookie: { 
     secure: false,

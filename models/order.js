@@ -12,12 +12,12 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Order.belongsTo(models.User)
-      Order.hasMany(models.Masseus)
+      Order.hasMany(models.Masseus, { onDelete: 'cascade', onUpdate: 'cascade'})
     }
   }
   Order.init({
     UserId: DataTypes.INTEGER,
-    MasseusId: DataTypes.INTEGER,
+    MasseuId: DataTypes.INTEGER,
     orderDate: DataTypes.DATE,
     duration: DataTypes.INTEGER,
     status: DataTypes.STRING

@@ -12,16 +12,16 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      User.hasOne(models.Order)
+      User.hasOne(models.Order, { onDelete: 'cascade', onUpdate: 'cascade'})
     }
   }
   User.init({
-    username: DataTypes.STRING, // by register
-    password: DataTypes.STRING, // by register
-    name: DataTypes.STRING, // by register
-    address: DataTypes.STRING, // by register
-    phone: DataTypes.STRING, // by register
-    email: DataTypes.STRING, // by register
+    username: {type:DataTypes.STRING, validate: {notEmpty:{msg:'Username is required'}}}, // by register
+    password: {type:DataTypes.STRING, validate: {notEmpty:{msg:'Password is required'}}}, // by register
+    email: {type:DataTypes.STRING, validate: {notEmpty:{msg:'Email is required'}}}, // by register
+    name: {type:DataTypes.STRING, validate: {notEmpty:{msg:'Name is required'}}}, // by register
+    address: {type:DataTypes.STRING, validate: {notEmpty:{msg:'Address is required'}}}, // by register
+    phone: {type:DataTypes.STRING, validate: {notEmpty:{msg:'Phone is required'}}}, // by register
     isAdmin: DataTypes.BOOLEAN // by hook
   }, {
     sequelize,

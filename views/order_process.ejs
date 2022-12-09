@@ -14,7 +14,11 @@
     <link type="text/css" rel="stylesheet" href="../../style2.css">
 </head>
 
-<body onload="
+
+
+<body onload="">
+
+<script>
 
 let timerInterval
             Swal.fire({
@@ -68,7 +72,7 @@ let timerInterval
                                     })
                                     .then(okay => {
                                         if (okay) {
-                                            window.location.href = '/'
+                                            window.location.href = `/kang-pijet/<%= id %>/testimoni`
                                         }
                                     })
                                 })
@@ -78,12 +82,13 @@ let timerInterval
                 })
             })
 
-">
-    <!-- NAVBAR -->
-    <%- include('./partials/navbar.ejs')%>
-        <br><br><br><br><br>
-        <!-- NAVBAR END -->
-    <div>
+</script>
+<!-- NAVBAR -->
+<%- include('./partials/navbar.ejs')%>
+<br><br><br><br><br>
+<!-- NAVBAR END -->
+
+<div>
         <h1>Input Order</h1>
         <form action="/kang-pijet/:id/order" method="post">
             Choose Date <input type="datetime-local" name="orderDate"> <br>
@@ -91,5 +96,6 @@ let timerInterval
             <input type="button" value="Submit">
         </form>
     </div>
+    <%- include('./partials/footer-fixed-bottom.ejs')%>
 </body>
 </html>

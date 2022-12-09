@@ -5,7 +5,7 @@ const masseus = require('../models/masseus');
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   up(queryInterface, Sequelize) {
-    queryInterface.createTable('Testimonies', {
+    return queryInterface.createTable('Testimonies', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -17,7 +17,7 @@ module.exports = {
         references: {
           model: 'Masseus',
           key: 'id',
-        }
+        }, onDelete: 'cascade', onUpdate: 'cascade'
       },
       message: {
         type: Sequelize.STRING
@@ -37,6 +37,6 @@ module.exports = {
     });
   },
   down(queryInterface, Sequelize) {
-    queryInterface.dropTable('Testimonies');
+    return queryInterface.dropTable('Testimonies');
   }
 };

@@ -5,36 +5,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet" /> -->
-
-    <!-- Link Swiper's CSS -->
-    <link type="text/css" rel="stylesheet" href="/swiper-bundle.min.css">
-
     <!-- CSS -->
-    <link type="text/css" rel="stylesheet" href="/style1.css">
-
-    <!-- BOXICONS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-    <link type="text/css" rel="stylesheet" href="/style2.css">
-    <link rel=”icon” href=”./img/logo3.png”>
+    <link type="text/css" rel="stylesheet" href="../swiper-bundle.min.css">
+    <link type="text/css" rel="stylesheet" href="../style1.css">
+    <link type="text/css" rel="stylesheet" href="../style2.css">
+    <link rel=”icon” href=”../img/logo3.png”>
     <title>Pijet Ena-Ena</title>
 </head>
 
 <body>
-    <%- include('./partials/navbar-sementara-buat-login') %>
-    <main style="margin-top:100px">
+    <!-- NAVBAR -->
+    <%- include('./partials/navbar.ejs')%>
+    <br><br><br><br><br>
+    <!-- NAVBAR END -->
+    <main>
         <h1>Sign Up</h1>
         <form action="/register" method="post">
-            Full Name: <input type="text" name="name"> <br>
-            Email: <input type="text" name="email"> <br>
-            Username: <input type="text" name="username"> <br>
-            Password: <input type="password" name="password"> <br>
-            Address: <input type="text" name="address"> <br>
-            Phone: <input type="number" name="phone"> <br>
+            Username: <input type="text" name="username"> <br> <i style="color: red;"><%= !err?'':err.username %></i> <br>
+            Password: <input type="password" name="password"> <br> <i style="color: red;"><%= !err?'':err.password %></i> <br>
+            Email: <input type="text" name="email"> <br> <i style="color: red;"><%= !err?'':err.email %></i> <br>
+            Full Name: <input type="text" name="name"> <br> <i style="color: red;"><%= !err?'':err.name %></i> <br>
+            Address: <input type="text" name="address"> <br> <i style="color: red;"><%= !err?'':err.address %></i> <br>
+            Phone: <input type="number" name="phone"> <br> <i style="color: red;"><%= !err?'':err.phone %></i> <br>
             <input type="submit">
         </form>
     </main>
+    <%- include('./partials/footer-fixed-bottom.ejs')%>
 </body>
 </html>

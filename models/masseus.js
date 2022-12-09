@@ -1,4 +1,5 @@
 'use strict';
+const {sequelize} = require('sequelize')
 const {
   Model
 } = require('sequelize');
@@ -11,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Masseus.hasMany(models.Testimony)
+      Masseus.hasMany(models.Testimony,{ onDelete: 'cascade', onUpdate: 'cascade'})
       Masseus.belongsTo(models.Order)
 
     }
@@ -80,14 +81,8 @@ module.exports = (sequelize, DataTypes) => {
         notEmpty: {
           msg : 'name is required'
         },
-        max: {
-          args: 5,
-          msg: 'max rating is 5'
-        },
-        min: {
-          args: 0,
-          msg: 'min rating is 0'
-        }
+        max: 5,
+        min: 0
       }
     },
     price: {
@@ -113,7 +108,7 @@ module.exports = (sequelize, DataTypes) => {
           msg : 'img is required'
         }
       }
-    }
+    },
   }, {
     sequelize,
     modelName: 'Masseus',

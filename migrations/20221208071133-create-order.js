@@ -1,8 +1,8 @@
 'use strict';
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Orders', {
+  up(queryInterface, Sequelize) {
+    return queryInterface.createTable('Orders', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -15,6 +15,15 @@ module.exports = {
           model: 'Users',
           key: 'id'
         }
+        , onDelete: 'cascade', onUpdate: 'cascade'
+      },
+      MasseuId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Users',
+          key: 'id'
+        }
+        , onDelete: 'cascade', onUpdate: 'cascade'
       },
       orderDate: {
         type: Sequelize.DATE
@@ -35,7 +44,7 @@ module.exports = {
       }
     });
   },
-  async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Orders');
+  down(queryInterface, Sequelize) {
+    return queryInterface.dropTable('Orders');
   }
 };
