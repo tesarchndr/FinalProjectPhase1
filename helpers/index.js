@@ -1,7 +1,5 @@
-const formatRupiah = (money) => {
-    return new Intl.NumberFormat('id-ID',
-      { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }
-    ).format(money);
+const formatRating = (rating) => {
+    return rating.toFixed(2)
  }
 
- module.exports = formatRupiah
+ module.exports = formatRating

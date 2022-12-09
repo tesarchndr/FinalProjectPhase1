@@ -58,7 +58,8 @@
                     <%= data.price %>
                 </p>
                 <p><b>Rating:</b>
-                    <%= (dataLike.Testimonies.length * 5 / data.Testimonies.length)%>
+                    <%= formatRating
+                    (dataLike.Testimonies.length * 5 / data.Testimonies.length)%>
                 </p>
                 <a href="/kang-pijet/<%= data.id %>/order"><button>Pesan</button></a>
                 <a href="/kang-pijet/<%= data.id %>/testimoni"><button>Add Testimoni</button></a>

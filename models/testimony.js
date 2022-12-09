@@ -33,5 +33,9 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Testimony',
   });
+  Testimony.beforeCreate((instance, options)=>{
+    instance.likeStatus = false
+    instance.message = ''
+  })
   return Testimony;
 };

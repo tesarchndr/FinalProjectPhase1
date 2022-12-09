@@ -1,6 +1,6 @@
 const { Masseus, Order, Testimony } = require('../models')
 const { Op } = require('sequelize')
-const { formatRupiah } = require('../helpers/index')
+const { formatRating } = require('../helpers/index')
 const Swal = require('sweetalert2')
 
 
@@ -10,20 +10,20 @@ class Controller {
         const { username, isAdmin } = req.session
         const user_name = req.session.name
         const { name, category, gender, sortBy } = req.query
-        let search ={}
-        
+        let search = {}
+
         search = { name, category, gender, sortBy }
-        
-        let option = {where: {}}
-        if (name) { option.where.name = { [Op.iLike]: `%${name}%` }}
-        if (category) {option.where.category = category}
-        if (gender) {option.where.gender = gender}
-        if (sortBy && sortBy === "hargaTerendah") {option.order = [['price', 'ASC']]}
-        if (sortBy && sortBy === "hargaTertinggi") {option.order = [['price', 'DESC']]}
+
+        let option = { where: {} }
+        if (name) { option.where.name = { [Op.iLike]: `%${name}%` } }
+        if (category) { option.where.category = category }
+        if (gender) { option.where.gender = gender }
+        if (sortBy && sortBy === "hargaTerendah") { option.order = [['price', 'ASC']] }
+        if (sortBy && sortBy === "hargaTertinggi") { option.order = [['price', 'DESC']] }
 
         Masseus.findAll(option)
             .then(data => {
-                response.render('kangPijet', { data, formatRupiah, name: user_name, isAdmin, search, err: !errors?null:errors })
+                response.render('kangPijet', { data, formatRupiah, name: user_name, isAdmin, search, err: !errors ? null : errors })
             })
             .catch(err => {
                 response.redirect(err)
@@ -62,6 +62,8 @@ class Controller {
             )
                 .then(result => {
                     data = result
+                    // console.log(data);
+                    // console.log(data.Testimonies);
                     return Masseus.findOne({
                         where: { id },
                         include: {
@@ -73,7 +75,8 @@ class Controller {
                     })
                 })
                 .then(dataLike => {
-                    response.render('kangPijetId', { data, isAdmin, name, dataLike })
+                    // console.log(dataLike);
+                    response.render('kangPijetId', { data, isAdmin, name, dataLike, formatRating })
                 })
                 .catch(err => {
                     console.log(err);

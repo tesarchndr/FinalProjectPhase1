@@ -1,5 +1,6 @@
 'use strict';
 const {sequelize} = require('sequelize')
+const {Testimony} = require('./index')
 const {
   Model
 } = require('sequelize');
@@ -16,11 +17,18 @@ module.exports = (sequelize, DataTypes) => {
       Masseus.belongsTo(models.Order)
 
     }
+
+    static calculateRating(id) {
+      return Masseus.findByPk(id,{ include: Testimony })
+    }
+
     formatPrice(){
       return new Intl.NumberFormat('id-ID',
       { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }
     ).format(this.price);
     }
+
+
   }
   Masseus.init({
     name: {
