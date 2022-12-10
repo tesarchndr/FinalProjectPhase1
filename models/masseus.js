@@ -18,10 +18,6 @@ module.exports = (sequelize, DataTypes) => {
 
     }
 
-    static calculateRating(id) {
-      return Masseus.findByPk(id,{ include: Testimony })
-    }
-
     formatPrice(){
       return new Intl.NumberFormat('id-ID',
       { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }

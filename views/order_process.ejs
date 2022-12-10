@@ -23,7 +23,7 @@
 let timerInterval
             Swal.fire({
             title: 'Kang Pijet siap-siap',
-            timer: 1000,
+            timer: 2000,
             didOpen: () => { Swal.showLoading() },
             willClose: () => { clearInterval(timerInterval) }
             })
@@ -31,14 +31,14 @@ let timerInterval
             
                 Swal.fire({
                 title: 'Lagi dijalan nih',
-                timer: 1000,
+                timer: 2000,
                 didOpen: () => { Swal.showLoading() },
                 willClose: () => { clearInterval(timerInterval) }
                 })
                 .then((result) => {
                     Swal.fire({
                     title: 'Macet Euy',
-                    timer: 1000,
+                    timer: 4000,
                     didOpen: () => { Swal.showLoading() },
                     willClose: () => { clearInterval(timerInterval) }
                     })
@@ -52,14 +52,14 @@ let timerInterval
                         .then((result) => {
                             Swal.fire({
                             title: 'Sudah selesai pijetnya nih ka',
-                            timer: 1000,
+                            timer: 2000,
                             didOpen: () => { Swal.showLoading() },
                             willClose: () => { clearInterval(timerInterval) }
                             })
                             .then((result) => {
                                 Swal.fire({
                                 title: 'Pijat selesai, \nTerima kasih sudah menggunakan Pijet Ena',
-                                timer: 1000,
+                                timer: 3000,
                                 didOpen: () => { Swal.showLoading() },
                                 willClose: () => { clearInterval(timerInterval) }
                                 })

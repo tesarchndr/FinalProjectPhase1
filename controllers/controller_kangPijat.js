@@ -13,17 +13,16 @@ class Controller {
         let search = {}
 
         search = { name, category, gender, sortBy }
-
         let option = { where: {} }
         if (name) { option.where.name = { [Op.iLike]: `%${name}%` } }
         if (category) { option.where.category = category }
         if (gender) { option.where.gender = gender }
         if (sortBy && sortBy === "hargaTerendah") { option.order = [['price', 'ASC']] }
         if (sortBy && sortBy === "hargaTertinggi") { option.order = [['price', 'DESC']] }
-
+        
         Masseus.findAll(option)
-            .then(data => {
-                response.render('kangPijet', { data, formatRupiah, name: user_name, isAdmin, search, err: !errors ? null : errors })
+        .then(data => {
+                response.render('kangPijet', { data, formatRupiah:null, name: user_name, isAdmin, search, err: !errors ? null : errors })
             })
             .catch(err => {
                 response.redirect(err)
